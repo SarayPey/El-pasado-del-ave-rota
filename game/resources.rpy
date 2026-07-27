@@ -6,9 +6,9 @@ define melissa = Character("Melissa Torres", color = "#690591")
 define erin    = Character("Teniente Erin Miller")
 
 # Pasado
-define adamP   = Character("Adam Miller (9)", color = "#f38508")
-define brayanP = Character("Brayan Orellana (14)", color = "#218a17")
-define gavyaP  = Character("Gavya Meraki (12)", color = "#2fafcf")
+define adamP   = Character("Adam Miller", color = "#f38508") # tiene 9 años
+define brayanP = Character("Brayan Orellana", color = "#218a17") # tiene 14 años
+define gavyaP  = Character("Gavya Meraki", color = "#2fafcf") # tiene 12 años
 
 # Variables
 define puntos          = 0 # Parámetros para avanzar al siguiente capítulo, van de 0 a 100 y definen las monedas de cada capítulo.
@@ -16,7 +16,7 @@ define monedas         = 0     # Dinero del juego
 define rechazoDes      = 0 # Parámetros que define las veces en que el usuario se negó a estar en la misión, van de 0 a 5 y definen las probabilidades de tener el final malo.
 define adamFeli        = 64    # Parámetros de felicidad de Adam Carter, van de 0 a 100 y estos definen el final.
 define reputacionTra   = 0     # Parámetro de reputación en el equipo policial, va de -100 a +100 y define las monedas de cada día.
-define enPasado        = False # Parámetro de si está en el pasado
+define enPasado        = False # Parámetro de si el jugador está en el pasado
 define progresoRescate = 0     # Proceso de rescate desde el presente, de 0 a 100%, y esto define el final.
 define diasPasado      = 0     # Días en el pasado, afecta al progreso de rescate
 define adamCFeli       = 32    # Parámetros de felicidad de Adam Carter (niño), van de 0 a 100 y estos definen el final.
