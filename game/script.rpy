@@ -377,6 +377,7 @@ label cap0:
                 adam "{cps=18}Sin embargo, la teoría del tiempo mochibria dice que es probable que en el proceso del viaje se esté creando una rama alterna para no afectar tu rama actual.{/cps}"
                 brayan "{cps=18}En resumen, no se crea una paradoja.{/cps}"
                 saviTortu "{cps=18}Entiendo.{/cps}"
+        erin "{cps=18}.{/cps}"
     return
         
     # if rechazoDes > 3:
