@@ -1,3 +1,4 @@
+## Personajes
 # Presente
 define adam    = Character("Adam Carter", color = "#f07b32")
 define brayan  = Character("Brayan Orellana", color = "#3bc137")
@@ -9,6 +10,16 @@ define erin    = Character("Teniente Erin Miller")
 define adamP   = Character("Adam Miller", color = "#f38508") # tiene 9 años
 define brayanP = Character("Brayan Orellana", color = "#218a17") # tiene 14 años
 define gavyaP  = Character("Gavya Meraki", color = "#2fafcf") # tiene 12 años
+
+## Imágenes
+# Fondos
+image intro = 'images/BG/Introducción.png'
+image pasillo = 'images/BG/Pasillo.png'
+image reunion = 'images/BG/Sala de reuniones.png'
+
+# Personajes/sprites
+
+image idleAdam = 'images/Sprites'
 
 # Variables
 define puntos          = 0 # Parámetros para avanzar al siguiente capítulo, van de 0 a 100 y definen las monedas de cada capítulo.

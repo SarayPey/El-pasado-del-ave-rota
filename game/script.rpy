@@ -2,6 +2,7 @@
 define saviTortu = Character("[prota] [apellido]") # La variable del protagonista es saviTortu porque es una mezcla de las palabras en inglés "{cps=18}Savior" y "{cps=18}Torture", que son dos opciones {/cps}s plausibles para el jugador en el juego
 
 label start:
+    scene black
     stop music
     $ prota = renpy.input("Ingresa tu nombre en la aventura", length=32)
     $ prota = prota.strip()
@@ -29,6 +30,7 @@ label start:
             return
 
 label cap0:
+    scene intro with fade
     play music "001.ClearAdventureDay.mp3"
     screen stats():
         if enPasado == True:
@@ -47,11 +49,11 @@ label cap0:
     "{cps=18}Habilidad de nacimiento: {b}{i}Brillo en la oscuridad{/i}{/b}.{/cps}"
     "{cps=18}Eres un agente ingresado a la policía de Senlín, con [edad] años, has logrado ganar la confianza de los tres sectores de la zona de Investigación.{/cps}"
     "{cps=18}Una reunión con los agentes te espera esta mañana.{/cps}"
+    scene pasillo with fade
     adam "{cps=18}Buenos días, agente [apellido]. ¿Cómo está para la reunión de hoy?{/cps}"
     "{cps=18}A tu lado, ves a Adam Carter, líder y detective principal del sector 970, uno de los primeros en acogerte en el entorno, aunque no lo conoces mucho.{/cps}"
     menu:
         "{cps=18}¿Cómo saludas?{/cps}"
-
         "Saludo amistoso, como a un amigo.":
             saviTortu "{cps=18}Buenos días, Adam.{/cps}"
             $ adamFeli +=2
@@ -118,23 +120,10 @@ label cap0:
                             adam "{cps=18}Claro, algo de compañía no haría mal.{/cps}"
                             adam "{cps=18}Sígueme, [apellido].{/cps}"
                             jump ordenUnitario
-        "Desconocer":
-            saviTortu "{cps=18}Disculpe la pregunta, señor.{/cps}"
-            saviTortu "{cps=18}Pero ¿quién es usted?{/cps}"
-            adam "{cps=18}…{/cps}"
-            "{cps=18}El detective mira a la ventana un momento, entonces suspira y vuelve a verte.{/cps}"
-            adam "{cps=18}En caso de cualquier problema, soy Adam Carter, detective principal y líder del sector 970 de la zona de Investigación.{/cps}"
-            adam "{cps=18}Si necesitas ayuda, estoy aquí para todo.{/cps}"
-            adam "{cps=18}Supongo que nos veremos en la reunión.{/cps}"
-            "{cps=18}Te retiras y vas a buscar algunos papeles antes de ir a la sala de reuniones.{/cps}"
-            jump desconocer
-        "Ignoras y sigues tu camino":
-            "{cps=18}Pasas de largo el saludo de Adam, como si no hubieras notado su presencia.{/cps}"
-            saviTortu "{cps=18}{i}\"Es un tipo raro…\"{/i}.{/cps}"
-            $ adamFeli -=2
-            jump ignorar
     label reunion:
+        scene intro with dissolve
         "{cps=18}{b}{i}Una hora después…{/i}{/b}{/cps}"
+        scene reunion with fade
         "{cps=18}Cuando entras a la reunión, ves a Adam terminando de ordenar la sala. Ves la sala limpia y ordenada, y sientes un aroma a panqueques y rollos de canela.{/cps}"
         adam "{cps=18}Saludos, [apellido].{/cps}"
         menu:
@@ -149,7 +138,7 @@ label cap0:
                         $ adamFeli += 2
                         adam "{cps=18}Gracias, [apellido].{/cps}"
                         adam "{cps=18}Aunque no es un logro como tal, me gusta considerarlo como tal.{/cps}"
-                    "Pero es una reunión, no tenías que hacer desayuno.":
+                    "Pero es una reunión, no tenías que hacer comida.":
                         adam "{cps=18}Buena pregunta, [apellido].{/cps}"
                         adam "{cps=18}Para este tipo de reuniones, el teniente me da dado el permiso de preparar algo para aliviar el estrés una vez terminada la reunión.{/cps}"
                         adam "{cps=18}Además, cocinar es terapéutico para mí, es divertido y puedo ir variando lo que hago.{/cps}"
@@ -165,59 +154,8 @@ label cap0:
                                 adam "{cps=18}Siento mucho haberme alargado.{/cps}"
                                 adam "{cps=18}De todas formas, gracias por el comentario.{/cps}"
                                 adam "{cps=18}Como decía, esperemos al resto.{/cps}"
-                                "{cps=18}{/cps}"
-            
-    label desconocer:
-        "{cps=18}{b}{i}Una hora después…{/i}{/b}{/cps}"
-        "{cps=18}Una vez llegas a la sala de reuniones, ves a Adam ordenando las sillas, dejando un espacio simétrico entre ellas.{/cps}"
-    label ignorar:
-        "{cps=18}Vas a la sala común a recoger unos papeles.{/cps}"
-        brayan "{cps=18}¿Sabes que ignorar un saludo es de mala educación?{/cps}"
-        $ reputacionTra -= 10
-        "{cps=18}Antes de darte cuenta, divisas a {b}Brayan Orellana{/b}, agente especializado en misiones encubiertas del sector 970, el cual se estaba sirviendo un té.{/cps}"
-        brayan "{cps=18}Especialmente si es uno de los superiores.{/cps}"
-        menu:
-            "Al ver que te tenía entre la espada y la pared, decides…"
-            "Disculparte":
-                saviTortu "{cps=18}No me había dado cuenta de que estaba ahí.{/cps}"
-                saviTortu "{cps=18}Lo siento.{/cps}"
-                brayan "{cps=18}No te preocupes, [apellido], llevas poco tiempo aquí.{/cps}"
-                brayan "{cps=18}Pero recuerda que en Senlín es una falta de respeto ignorar el saludo.{/cps}"
-                brayan "{cps=18}Debes tenerlo en cuenta para la próxima, ¿vale?{/cps}"
-                saviTortu "{cps=18}Entendido…{/cps}"
-                $ reputacionTra += 5
-                brayan "{cps=18}¿Estás libre? Voy a ayudar a Carter a arreglar las cosas para la reunión.{/cps}"
-                menu:
-                    brayan "{cps=18}¿Me acompañas?{/cps}"
-                    "Claro, no me molesta ayudarlos":
-                        $ reputacionTra += 10
-                        brayan "{cps=18}Bien, sígueme.{/cps}"
-                        jump colaboracionRemor
-                    "Tengo trabajo pendiente que hacer":
-                        brayan "{cps=18}Es algo de papelería, ¿verdad?{/cps}"
-                        brayan "{cps=18}Pregúntale a {b}Gavya Meraki{/b} para que te ayude con eso. Ella sabe de papelería.{/cps}"
-                        brayan "{cps=18}Solo si quieres, claro.{/cps}"
-            "Hacer una excusa":
-                saviTortu "{cps=18}¿De qué hablas? Yo no vi a nadie.{/cps}"
-                brayan "{cps=18}¿En serio?{/cps}"
-                brayan "{cps=18}Porque yo reconozco cuando alguien ignora a una persona.{/cps}"
-                gavya "{cps=18}¿Pasa algo, Orellana y [apellido]?{/cps}"
-                "{cps=18}Ante ti, ves a {b}Gavya Meraki{/b}, encargada de relaciones exteriores del sector 1 (liderado por {b}Orfeo Galloway{/b}).{/cps}"
-                brayan "{cps=18}Son cosas del sector, Meraki.{/cps}"
-                gavya "{cps=18}¿Seguro? Sentí que pasaron cosas en el pasillo.{/cps}"
-                $ reputacionTra -= 10
-                brayan "{cps=18}Algunos problemas con [apellido].{/cps}"
-                gavya "{cps=18}Oh.{/cps}"
-                gavya "{cps=18}¿Solo eso van a decir?{/cps}"
-                brayan "{cps=18}Te explicaré más tarde, Gavya.{/cps}"
-    label colaboracionRemor:
-        "{cps=18}Después de un largo rato, llegaron a la sala de reuniones, donde Adam estaba ordenando.{/cps}"
-        brayan "{cps=18}Jefe.{/cps}"
-        adam "{cps=18}¡Hola, Brayan{/cps}!"
-        adam "{cps=18}Veo que has traído a alguien.{/cps}"
-        brayan "{cps=18}Así es. [saviTortu] quiso venir a ayudar.{/cps}"
-        adam "{cps=18}¡Eso está perfecto! Si los tres trabajamos de buena forma, tendremos todo listo en poco tiempo.{/cps}"
     label ordenUnitario:
+        scene reunion with fade
         "{cps=18}Adam y tú llegan a la sala de reuniones, la cual estaba presentable, pero no lo estaba para la reunión.{/cps}"
         adam "{cps=18}Bien, [apellido], vamos a repartir los trabajos.{/cps}"
         menu:
@@ -253,6 +191,55 @@ label cap0:
                         adam "{cps=18}Y quizás te hable un poco de lo que estaré cocinando.{/cps}"
                         adam "{cps=18}En la mesa están las cosas para limpiar.{/cps}"
                         "{cps=18}Por un largo rato, ambos trabajaron juntos. Adam estuvo cocinando y preparando el material mientras tú le ayudabas a limpiar la sala.{/cps}"
+                        "{cps=18}Después de largos minutos, el lugar finalmente estaba ordenado, y Adam ya tenía el desayuno listo.{/cps}"
+                        adam "{cps=18}Finalmente está listo.{/cps}"
+                        menu:
+                            "Parece que has cocinado algo bueno.":
+                                $ adamFeli += 2
+                                adam "{cps=18}Gracias, [prota].{/cps}"
+                                adam "{cps=18}Espero que te guste.{/cps}"
+                                adam "{cps=18}Aunque es para después de la reunión, así que tienes que tener paciencia.{/cps}"
+                                brayan "{cps=18}Disculpa la demora, Adam.{/cps}"
+                                "{cps=18}Ante ustedes, ves a {b}Brayan Orellana{/b}, agente especializado en misiones encubiertas del sector 970.{/cps}"
+                                brayan "{cps=18}¿Te acaba de ayudar el nuevo?{/cps}"
+                                adam "{cps=18}En realidad, [prota] acaba de llegar{/cps}"
+                                brayan "{cps=18}Ah.{/cps}"
+                                brayan "{cps=18}Eso es genial, supongo.{/cps}"
+                                brayan "{cps=18}Entonces… [saviTortu], ¿no?{/cps}"
+                                menu:
+                                    "Sí, soy yo.":
+                                        adam "{cps=18}[apellido], te presento al agente Orellana, experto en misiones encubiertas del sector 970.{/cps}"
+                                        adam "{cps=18}Brayan. creo que ya has escuchado de [prota], es de nuestros agentes recién graduados de… la escuela de criminalística.{/cps}"
+                                        brayan "{cps=18}Oh…{/cps}"
+                                        "{cps=18}Notas una ligera tensión entre ambos agentes al mencionar la escuela de criminalística.{/cps}"
+                                        adam "{cps=18}Bueno, como decía.{/cps}"
+                                        adam "{cps=18}Brayan, ya que estás aquí, ¿me puedes ayudar a ordenar la mesa?{/cps}"
+                                        adam "{cps=18}Tengo que prepararme para recibir al resto.{/cps}"
+                                        brayan "{cps=18}Claro que puedo.{/cps}"
+                                        "{cps=18}Adam sale de la sala, observando en la puerta a la espera de los agentes.{/cps}"
+                                        "{cps=18}Mientras tanto,Brayan ordenaba la mesa, había un silencio incómodo entre ambos.{/cps}"
+                                        saviTortu "{cps=18}…{/cps}"
+                                        brayan "{cps=18}…{/cps}"
+                                        adam "{cps=18}Disculpen…{/cps}"
+                                        adam "{cps=18}¿Está… todo bien?{/cps}"
+                                        brayan "{cps=18}No te preocupes, Carter.{/cps}"
+                                        brayan "{cps=18}Solo estoy ordenamos mientras [apellido] mira.{/cps}"
+                                        adam "{cps=18}Es raro que no hables, Orellana.{/cps}"
+                                        brayan "{cps=18}Estoy concentrado con la mesa.{/cps}"
+                                        adam "{cps=18}Vale, vale.{/cps}"
+                                        menu:
+                                            adam "{cps=18}¿Qué hay de ti, [prota]?{/cps}"
+
+                                            "Yo suelo estar en silencio, detective":
+                                                adam "{cps=18}Comprendo.{/cps}"
+                                                adam "{cps=18}Yo también era así a tu edad.{/cps}"
+                                            "Estoy concentrado en algo":      
+                                                brayan "{cps=18}Somos dos, [apellido].{/cps}"
+                                                brayan "{cps=18}Tranquilo, jefe, nadie se va a morir por no hablar{/cps}"
+                                                saviTortu "{cps=18}...{/cps}"
+                                                brayan "{cps=18}...{/cps}"
+                                                adam "{cps=18}...{/cps}"
+                                                jump OUR_Reunion
     label OUR_PreReunion:
         "{cps=18}{b}{i}47 minutos después…{/i}{/b}{/cps}"
         "{cps=18}Después de largos minutos, el lugar finalmente estaba ordenado, y Adam ya tenía el desayuno listo.{/cps}"
@@ -307,38 +294,10 @@ label cap0:
                             "También estoy concentrado":      
                                 brayan "{cps=18}Somos dos, [apellido].{/cps}"
                                 brayan "{cps=18}Tranquilo, jefe, nadie se va a morir por no hablar{/cps}"
-                            "Se siente tenso estar en silencio, ¿puedo poner música?":
-                                brayan "{cps=18}¿Quieres poner un poco de música?{/cps}"
-                                "{cps=18}Brayan saca un parlante y lo deja en una silla.{/cps}"
-                                brayan "{cps=18}Reclamo esta silla, y deja que encienda el parlante para que pongas música, [apellido].{/cps}"
-                                adam "{cps=18}Solo puede ser una, porque estamos en la hora.{/cps}"
-                                "{cps=18}Revisas en tu celular las canciones que tienes, te pones audífonos para elegir una canción mientras Adam y Brayan terminan de ordenar.{/cps}"
-                                "{cps=18}Solo tienes {b}cinco{/b} canciones disponibles{/cps}"
-                                "{cps=18}…{/cps}"
-                                "{cps=18}…{/cps}"
-                                "{cps=18}…{/cps}"
-                                "{cps=18}…{/cps}"
-                                "{cps=18}…{/cps}"
-                                adam "{cps=18}Un poco más a la derecha… Ya está listo{/cps}"
-                                menu:
-                                    adam "{cps=18}¿Encontraste algo, [apellido]?{/cps}"
-
-                                    "Quiero escuchar (nombreC)":
-                                        "{cps=18}…{/cps}"
-                                        adam "{cps=18}…{/cps}"
-                                        jump OUR_Reunion
-                                    "Quiero escuchar (nombreC)":
-                                        "{cps=18}…{/cps}"
-                                        jump OUR_Reunion
-                                    "Quiero escuchar (nombreC)":
-                                        "{cps=18}…{/cps}"
-                                        jump OUR_Reunion
-                                    "Quiero escuchar (nombreC)":
-                                        "{cps=18}…{/cps}"
-                                        jump OUR_Reunion
-                                    "Quiero escuchar (nombreC)":
-                                        "{cps=18}…{/cps}"
-                                        jump OUR_Reunion
+                                saviTortu "{cps=18}...{/cps}"
+                                brayan "{cps=18}...{/cps}"
+                                adam "{cps=18}...{/cps}"
+                                jump OUR_Reunion
     label OUR_Reunion:
         adam "{cps=18}Estoy vigilando la entrada, en caso de que el teniente pregunte.{/cps}"
         brayan "{cps=18}Como usted diga, jefe.{/cps}"
@@ -354,7 +313,7 @@ label cap0:
         gavya "{cps=18}Algo así.{/cps}"
         gavya "{cps=18}Anda en una misión con Eleanor en una colonia ilegal en Munho.{/cps}"
         adam "{cps=18}¿New Sydney?{/cps}"
-        gavya "{cps=18}Esa misma, están investigando a la fábrica donde Jadyn estuvo antes.{/cps}"
+        gavya "{cps=18}Esa misma, están investigando a la fábrica donde Palmer estuvo antes.{/cps}"
         gavya "{cps=18}Y tú…{/cps}"
         gavya "{cps=18}Debes ser [prota], ¿no?{/cps}"
         saviTortu "{cps=18}Sí, soy [saviTortu].{/cps}"
@@ -412,44 +371,47 @@ label cap0:
         menu:
             "¿Máquina del tiempo?":
                 adam "{cps=18}Así es, [prota].{/cps}"
-            "¿La simple existencia y uso de la máquina no causaría una paradoja?":
+                adam "{cps=18}Tenemos un caso de máquina del tiempo.{/cps}"
+            "¿La simple existencia y uso de la máquina no causaría una paradoja del tiempo?":
                 adam "{cps=18}Sí, lo haría.{/cps}"
                 adam "{cps=18}Sin embargo, la teoría del tiempo mochibria dice que es probable que en el proceso del viaje se esté creando una rama alterna para no afectar tu rama actual.{/cps}"
                 brayan "{cps=18}En resumen, no se crea una paradoja.{/cps}"
                 saviTortu "{cps=18}Entiendo.{/cps}"
-    if rechazoDes > 3:
-        jump cap1
-    else:
-        jump altEmer
-    
-label cap1:
-    "{cps=18}Capítulo 1:{/cps} {cps=3}La misión del reloj roto{/cps}"
-    # Desencadenante del conclicto, introducción de Ringi
-    "{cps=18}10:54AM. Laboratorios Chiraska. Senlín Central, distrito de Senlín. 18 de Marzo, año 3046{/cps}"
-    "{cps=18}llegas a tiempo a las afueras de un callejón.{/cps}"
-    saviTortu "{cps=18}Esto se supone que es el \"laboratorio\"…{/cps}"
-    adam "{cps=18}No lo digas tan alto o pueden oirte.{/cps}"
-    label altEmer:
-        "{cps=18}Capítulo 1:{/cps} {cps=3}La misión del reloj roto{/cps}"
-        "{cps=18}10:54AM. Casa de [saviTortu]. Senlín Central, distrito de Senlín. 18 de Marzo, año 3046{/cps}"
-        if(rechazoDes >= 3):
-            jump finalMaloSecuela
-        else:
-            "Rápidamente estás en las afueras de los laboratorios."
-
-    hide screen stats
-    $ enPasado = True
-
-label cap2:
-    show screen stats
-    "{cps=18}Capítulo 2:{/cps} {cps=3}Aviones del pasado{/cps}"
-    # Conflicto, reintroducción de personajes en su forma pasada y sus dinámicas anteriores
-    "{cps=18}10:54AM. Escuela de criminalística. Senlín Central, distrito de Senlín. 18 de Marzo, año 3026{/cps}"
     return
+        
+    # if rechazoDes > 3:
+    #     jump cap1
+    # else:
+    #     jump altEmer
+    
+# label cap1:
+#     "{cps=18}Capítulo 1:{/cps} {cps=3}La misión del reloj roto{/cps}"
+#     # Desencadenante del conclicto, introducción de Lydia
+#     "{cps=18}10:54AM. Laboratorios Chiraska. Senlín Central, distrito de Senlín. 18 de Marzo, año 3046{/cps}"
+#     "{cps=18}llegas a tiempo a las afueras de un callejón.{/cps}"
+#     saviTortu "{cps=18}Esto se supone que es el \"laboratorio\"…{/cps}"
+#     adam "{cps=18}No lo digas tan alto o pueden oirte.{/cps}"
+#     label altEmer:
+#         "{cps=18}Capítulo 1:{/cps} {cps=3}La misión del reloj roto{/cps}"
+#         "{cps=18}10:54AM. Casa de [saviTortu]. Senlín Central, distrito de Senlín. 18 de Marzo, año 3046{/cps}"
+#         if(rechazoDes >= 3):
+#             jump finalMaloSecuela
+#         else:
+#             "Rápidamente estás en las afueras de los laboratorios."
+
+#     hide screen stats
+#     $ enPasado = True
+
+# label cap2:
+#     show screen stats
+#     "{cps=18}Capítulo 2:{/cps} {cps=3}Aviones del pasado{/cps}"
+#     # Conflicto, reintroducción de personajes en su forma pasada y sus dinámicas anteriores
+#     "{cps=18}10:54AM. Escuela de criminalística. Senlín Central, distrito de Senlín. 18 de Marzo, año 3026{/cps}"
+#     return
 
 # label cap3: # Para la 2.0
 #     "{cps=18}Capítulo 3:{/cps} {cps=3}Desastre a contrarreloj{/cps}"
-#     # Aquí vemos la perpectiva de los personajes del presente, donde averiguan cómo traer al jugador de vuelta. Introducción de Lydia.
+#     # Aquí vemos la perpectiva de los personajes del presente, donde averiguan cómo traer al jugador de vuelta.
 
 # label cap4: # Para la 3.0
 #     "{cps=18}Capítulo 4:{/cps} {cps=3}La fiesta de la tortura{/cps}"
