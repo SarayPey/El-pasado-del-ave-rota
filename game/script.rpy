@@ -85,7 +85,7 @@ label cap0:
                     adam '{cps=18}Estoy seguro de ello.{/cps}'
                     hide felizAdam
                     '{cps=18}Adam se retira rápidamente hacia la sala de reuniones.{/cps}'
-                    jump reunion
+                    jump preReunion
                 '¿Necesitas ayuda para preparar las cosas?':
                     hide felizAdam
                     show amigoAdam
@@ -104,7 +104,7 @@ label cap0:
                             show amigoAdam
                             adam '{cps=18}Nos veremos más tarde, [prota].{/cps}'
                             '{cps=18}Ambos se van por su camino en silencio.{/cps}'
-                            jump reunion
+                            jump preReunion
                         'Ofrecer compañía':
                             $ reputacionTra += 5
                             hide felizAdam
@@ -185,109 +185,130 @@ label cap0:
             adam '{cps=18}Espera un poco ahí, ¿vale? El teniente va a llegar en breve.{/cps}'
             'Entendido':
                 adam '{cps=18}Si alguien más aparece, los dejo entrar a ambos.{/cps}'
+                pause(1.0)
+                adam'{cps=18}Me sorprende haber terminado esto.{/cps}'
             '¿Arreglaste todo tú solo?':
                 hide felizAdam
                 show amigoAdam
                 adam '{cps=18}Sí, todavía me sorprende haberlo logrado.{/cps}'
                 hide amigoAdam
                 show pensativoAdam
+        menu:
+            adam '{cps=18}Y me alcanzó tiempo para cocinar un poco.{/cps}'
+            'Eso suena como un buen logro':
+                $ adamFeli += 2
+                hide pensativoAdam
+                show felizAdam
+                adam '{cps=18}Gracias, [apellido].{/cps}'
+                adam '{cps=18}Aunque no es un logro como tal, me gusta considerarlo como tal.{/cps}'
+            'Pero es una reunión, no tenías que hacer comida.':
+                hide pensativoAdam
+                show felizAdam
+                adam '{cps=18}Buena pregunta, [apellido].{/cps}'
+                hide felizAdam
+                show amigoAdam
+                adam '{cps=18}Para este tipo de reuniones, el teniente me da dado el permiso de preparar algo para aliviar el estrés una vez terminada la reunión.{/cps}'
+                adam '{cps=18}Además, cocinar es terapéutico para mí, es divertido y puedo ir variando lo que hago.{/cps}'
+                hide amigoAdam
+                show observadorAdam
+                pause(1.0)
+                hide observadorAdam
+                show pensativoAdam
+                adam '{cps=18}…Eso no fue mucho detalle, ¿verdad?{/cps}'
+                hide pensativoAdam
+                show observadorAdam
                 menu:
-                    adam '{cps=18}Y me alcanzó tiempo para cocinar un poco.{/cps}'
-                    'Eso suena como un buen logro':
-                        $ adamFeli += 2
-                        hide pensativoAdam
+                    'No te preocupes, ahora entiendo más.':
+                        $ adamFeli +=3
+                        hide observadorAdam
                         show felizAdam
                         adam '{cps=18}Gracias, [apellido].{/cps}'
-                        adam '{cps=18}Aunque no es un logro como tal, me gusta considerarlo como tal.{/cps}'
-                    'Pero es una reunión, no tenías que hacer comida.':
-                        hide pensativoAdam
-                        show felizAdam
-                        adam '{cps=18}Buena pregunta, [apellido].{/cps}'
+                        adam '{cps=18}Me alegra no estar alargando una explicación.{/cps}'
                         hide felizAdam
                         show amigoAdam
-                        adam '{cps=18}Para este tipo de reuniones, el teniente me da dado el permiso de preparar algo para aliviar el estrés una vez terminada la reunión.{/cps}'
-                        adam '{cps=18}Además, cocinar es terapéutico para mí, es divertido y puedo ir variando lo que hago.{/cps}'
-                        hide felizAdam
-                        show observadorAdam
-                        pause(1.0)
+                        adam '{cps=18}Es que… normalmente no hablo tanto de mí mismo.{/cps}'
+                    'Creo que explicaste demasiado':
+                        $ adamFeli -=1
                         hide observadorAdam
                         show pensativoAdam
-                        adam '{cps=18}…Eso no fue mucho detalle, ¿verdad?{/cps}'
+                        adam '{cps=18}Siento mucho haberme alargado.{/cps}'
                         hide pensativoAdam
-                        show observadorAdam
+                        show amigoAdam
+                        adam '{cps=18}De todas formas, gracias por el comentario.{/cps}'
+                adam '{cps=18}Como decía, esperemos al resto.{/cps}'
+                menu:
+                    'Parece que has cocinado algo bueno.':
+                        $ adamFeli += 2
+                        hide amigoAdam
+                        show felizAdam
+                        adam '{cps=18}Espero que te guste.{/cps}'
+                        adam '{cps=18}Aunque es para después de la reunión, así que tienes que tener paciencia.{/cps}'
+                        hide felizAdam
+                        show idleAdam at right
+                        brayan '{cps=18}Disculpa la demora, Adam.{/cps}'
+                        '{cps=18}Ante ustedes, ves a {b}Brayan Orellana{/b}, agente especializado en misiones encubiertas del sector 970.{/cps}'
+                        brayan '{cps=18}¿Te acaba de ayudar el nuevo?{/cps}'
+                        hide idleAdam
+                        show amigoAdam at right
+                        adam '{cps=18}En realidad, [prota] acaba de llegar{/cps}'
+                        hide amigoAdam
+                        show idleAdam at right
+                        brayan '{cps=18}Ah.{/cps}'
+                        brayan '{cps=18}Eso es genial, supongo.{/cps}'
+                        brayan '{cps=18}Entonces… [saviTortu], ¿no?{/cps}'
                         menu:
-                            'No te preocupes, ahora entiendo más.':
-                                $ adamFeli +=3
-                                hide observadorAdam
-                                show felizAdam
-                                adam '{cps=18}Gracias, [apellido].{/cps}'
-                                adam '{cps=18}Me alegra no estar alargando una explicación.{/cps}'
-                                hide felizAdam
-                                show amigoAdam
-                                adam '{cps=18}Es que… normalmente no hablo tanto de mí mismo.{/cps}'
-                            'Creo que explicaste demasiado':
-                                $ adamFeli -=1
-                                hide observadorAdam
-                                show pensativoAdam
-                                adam '{cps=18}Siento mucho haberme alargado.{/cps}'
-                                hide pensativoAdam
-                                show amigoAdam
-                                adam '{cps=18}De todas formas, gracias por el comentario.{/cps}'
-                        adam '{cps=18}Como decía, esperemos al resto.{/cps}'
-                        menu:
-                            'Parece que has cocinado algo bueno.':
-                                $ adamFeli += 2
-                                hide amigoAdam
-                                show felizAdam
-                                adam '{cps=18}Espero que te guste.{/cps}'
-                                adam '{cps=18}Aunque es para después de la reunión, así que tienes que tener paciencia.{/cps}'
-                                hide felizAdam
-                                show idleAdam at right
-                                brayan '{cps=18}Disculpa la demora, Adam.{/cps}'
-                                '{cps=18}Ante ustedes, ves a {b}Brayan Orellana{/b}, agente especializado en misiones encubiertas del sector 970.{/cps}'
-                                brayan '{cps=18}¿Te acaba de ayudar el nuevo?{/cps}'
+                            'Sí, soy yo.':
                                 hide idleAdam
                                 show amigoAdam at right
-                                adam '{cps=18}En realidad, [prota] acaba de llegar{/cps}'
+                                adam '{cps=18}[apellido], te presento al agente Orellana, experto en misiones encubiertas del sector 970.{/cps}'
+                                adam '{cps=18}Brayan. creo que ya has escuchado de [prota], es de nuestros agentes recién graduados de… la escuela de criminalística.{/cps}'
+                                brayan '{cps=18}Oh…{/cps}'
                                 hide amigoAdam
-                                show idleAdam at right
-                                brayan '{cps=18}Ah.{/cps}'
-                                brayan '{cps=18}Eso es genial, supongo.{/cps}'
-                                brayan '{cps=18}Entonces… [saviTortu], ¿no?{/cps}'
+                                show observadorAdam at right
+                                '{cps=18}Notas una ligera tensión entre ambos agentes al mencionar la escuela de criminalística.{/cps}'
+                                hide observadorAdam
+                                show amigoAdam
+                                adam '{cps=18}Bueno, como decía.{/cps}'
+                                adam '{cps=18}Brayan, ya que estás aquí, ¿me puedes ayudar a ordenar la mesa?{/cps}'
+                                adam '{cps=18}Tengo que prepararme para recibir al resto.{/cps}'
+                                brayan '{cps=18}Claro que puedo.{/cps}'
+                                hide amigoAdam
+                                '{cps=18}Adam sale de la sala, observando en la puerta a la espera de los agentes.{/cps}'
+                                '{cps=18}Mientras tanto,Brayan ordenaba la mesa, había un silencio incómodo entre ambos.{/cps}'
+                                saviTortu '{cps=18}…{/cps}'
+                                brayan '{cps=18}…{/cps}'
+                                show pensativoAdam at left
+                                adam '{cps=18}Disculpen…{/cps}'
+                                adam '{cps=18}¿Está… todo bien?{/cps}'
+                                hide pensativoAdam
+                                show observadorAdam at left
+                                brayan '{cps=18}No te preocupes, Carter.{/cps}'
+                                brayan '{cps=18}Solo estoy ordenamos mientras [apellido] mira.{/cps}'
+                                hide observadorAdam
+                                show pensativoAdam at left
+                                adam '{cps=18}Es raro que no hables, Orellana.{/cps}'
+                                hide pensativoAdam
+                                show observadorAdam at left
+                                brayan '{cps=18}Estoy concentrado con la mesa.{/cps}'
+                                hide observadorAdam
+                                show amigoAdam
+                                adam '{cps=18}Vale, vale.{/cps}'
+                                hide amigoAdam
+                                show felizAdam
                                 menu:
-                                    'Sí, soy yo.':
-                                        adam '{cps=18}[apellido], te presento al agente Orellana, experto en misiones encubiertas del sector 970.{/cps}'
-                                        adam '{cps=18}Brayan. creo que ya has escuchado de [prota], es de nuestros agentes recién graduados de… la escuela de criminalística.{/cps}'
-                                        brayan '{cps=18}Oh…{/cps}'
-                                        '{cps=18}Notas una ligera tensión entre ambos agentes al mencionar la escuela de criminalística.{/cps}'
-                                        adam '{cps=18}Bueno, como decía.{/cps}'
-                                        adam '{cps=18}Brayan, ya que estás aquí, ¿me puedes ayudar a ordenar la mesa?{/cps}'
-                                        adam '{cps=18}Tengo que prepararme para recibir al resto.{/cps}'
-                                        brayan '{cps=18}Claro que puedo.{/cps}'
-                                        '{cps=18}Adam sale de la sala, observando en la puerta a la espera de los agentes.{/cps}'
-                                        '{cps=18}Mientras tanto,Brayan ordenaba la mesa, había un silencio incómodo entre ambos.{/cps}'
-                                        saviTortu '{cps=18}…{/cps}'
-                                        brayan '{cps=18}…{/cps}'
-                                        adam '{cps=18}Disculpen…{/cps}'
-                                        adam '{cps=18}¿Está… todo bien?{/cps}'
-                                        brayan '{cps=18}No te preocupes, Carter.{/cps}'
-                                        brayan '{cps=18}Solo estoy ordenamos mientras [apellido] mira.{/cps}'
-                                        adam '{cps=18}Es raro que no hables, Orellana.{/cps}'
-                                        brayan '{cps=18}Estoy concentrado con la mesa.{/cps}'
-                                        adam '{cps=18}Vale, vale.{/cps}'
-                                        menu:
-                                            adam '{cps=18}¿Qué hay de ti, [prota]?{/cps}'
-
-                                            'Yo suelo estar en silencio, detective':
-                                                adam '{cps=18}Comprendo.{/cps}'
-                                                adam '{cps=18}Yo también era así a tu edad.{/cps}'
-                                            'Estoy concentrado en algo':      
-                                                brayan '{cps=18}Somos dos, [apellido].{/cps}'
-                                                brayan '{cps=18}Tranquilo, jefe, nadie se va a morir por no hablar{/cps}'
-                                                saviTortu '{cps=18}...{/cps}'
-                                                brayan '{cps=18}...{/cps}'
-                                                adam '{cps=18}...{/cps}'
-                        jump reunion
+                                    adam '{cps=18}¿Qué hay de ti, [prota]?{/cps}'
+                                    'Yo suelo estar en silencio, detective':
+                                        hide felizAdam
+                                        show pensativoAdam at left
+                                        adam '{cps=18}Comprendo.{/cps}'
+                                        adam '{cps=18}Yo también era así a tu edad.{/cps}'
+                                    'Estoy concentrado en algo':
+                                        brayan '{cps=18}Somos dos, [apellido].{/cps}'
+                                        brayan '{cps=18}Tranquilo, jefe, nadie se va a morir por no hablar{/cps}'
+                                        saviTortu '{cps=18}...{/cps}'
+                                        brayan '{cps=18}...{/cps}'
+                                        adam '{cps=18}...{/cps}'
+                jump reunion
 
     label ordenUnitario:
         scene reunion with fade
@@ -494,9 +515,9 @@ label cap0:
                     "Rechazar":
                         $ rechazoDes += 1
                         scene room_glitched3
-                        pause(0.5)
+                        pause(0.1)
                         scene room_glitched2
-                        pause(0.2)
+                        pause(0.07)
                         scene reunion
                         saviTortu '{cps=18}En ese caso, quizás vaya, pero por hoy paso.{/cps}'
                         adam '{cps=18}No te preocupes, [prota].{/cps}'
@@ -561,7 +582,7 @@ label cap0:
                 adam '{cps=18}Entiendo.{/cps}'
                 adam '{cps=18}Te voy a guardar algo para más tarde si llegas a tener hambre.{/cps}'
         'Después de comer un poco, todos se retiran mientras Adam y el teniente ordenan la mesa.'
-        if(rechazoDes > 2):
+        if(rechazoDes < 2):
             jump tarde
         else:
             jump tardeRechazo
@@ -569,7 +590,8 @@ label cap0:
         stop music
         play music '006.Strings.mp3'
         scene introTarde with fade
-        'Después de un rato, el día se vuelve tarde.'
+        '{cps=18}Después de un rato, el día se vuelve tarde.{/cps}'
+        
         scene paraderoTarde with dissolve
         'Sales de la oficina, mirando hacia el paradero para ir a casa hasta que ves a Adam saliendo.'
         adam '{cps=18}Hiciste un buen trabajo hoy, [prota].{/cps}'
@@ -611,12 +633,15 @@ label cap0:
                 saviTortu '{cps=18}Yo… ya me voy{/cps}'
         adam '{cps=18}Aprovecha de subirte al bus antes de que se vaya.{/cps}'
         saviTortu '{cps=18}Tienes razón{/cps}'
-        'Subes al bus y ves la oficina alejarse mientras vas a casa a descansar para un nuevo día, y una nueva misión.'
+        '{cps=18}Subes al bus y ves la oficina alejarse mientras vas a casa a descansar para un nuevo día, y una nueva misión.{/cps}'
+        saviTortu '{cps=18}{i}Hoy fue un buen día{/i}{/cps}'
+        return
     label tardeRechazo:
         stop music
         play music '002.AdmadisFall.mp3' fadein 0.5 fadeout 0.1
         scene introTarde with fade
         '{cps=18}Después de horas, el día se vuelve tarde y luego se vuelve noche. Regresas rápidamente a casa para descansar un poco.{/cps}'
+        '{cps=18}Entras rápidamente a tu cuarto para dormir.{/cps}'
         scene yourRoom with pixellate
         saviTortu '{cps=18}Finalmente en casa…{/cps}'
         '{cps=18}A pesar de estar en un entorno seguro, sientes algo raro.{/cps}'
@@ -647,6 +672,7 @@ label cap0:
                     '{cps=18}Llamar ayuda{/cps}':
                         scene room_glitched3
                         pause(0.05)
+                        scene yourRoom
                         $ reputacionTra +=1
                         '{cps=18}Antes de poder hacer una llamada a la oficina, un cambio del entorno te hace soltar el teléfono.{/cps}'
                     '{cps=18}Esperar{/cps}':
@@ -739,9 +765,9 @@ label cap0:
 
     # if(adamCFeli >= 80 and progresoRescate == 100 and estaEnPasado == False and adamFeli >= 80):
     #     jump finalExcelente
-    label finalMaloSecuela:
+    #label finalMaloSecuela:
         # El personaje principal es mandado al pasado como castigo tras no asistir a la misión
-        '{cps=18}.{/cps}'
+    #    '{cps=18}.{/cps}'
     # label finalExcelente:
     #     # El personaje principal vuelve al presente y todo es perfecto
     #     '{cps=18}¡Felicidades, [prota]! Has conseguido el mejor final de todos.{/cps}'
