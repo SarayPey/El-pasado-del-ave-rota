@@ -13,13 +13,49 @@ define gavyaP  = Character("Gavya Meraki", color = "#2fafcf") # tiene 12 años
 
 ## Imágenes
 # Fondos
-image intro = 'images/BG/Introducción.png'
-image pasillo = 'images/BG/Pasillo.png'
-image reunion = 'images/BG/Sala de reuniones.png'
+image intro          = 'images/BG/Introduccion.png'
+image pasillo        = 'images/BG/Pasillo.png'
+image reunion        = 'images/BG/Sala de reuniones.png'
+image introTarde     = 'images/BG/IntroduccionAtardecer.png'
+image paraderoTarde  = 'images/BG/ParaderoTarde.png'
+image yourRoom       = 'images/BG/CuartoDeProta.png'
+image room_glitched1 = 'images/BG/CuartoDeProta_G1.png'
+image room_glitched2 = 'images/BG/CuartoDeProta_G2.png'
+image room_glitched3 = 'images/BG/CuartoDeProta_G3.png'
+image room_glitched4 = 'images/BG/CuartoDeProta_G4.png'
+image room_glitched5 = 'images/BG/CuartoDeProta_G5.png'
 
 # Personajes/sprites
 
-image idleAdam = 'images/Sprites'
+image idleAdam       = 'images/Sprites/Adam/idleAdam.png'
+image felizAdam      = 'images/Sprites/Adam/felizAdam.png'
+image amigoAdam      = 'images/Sprites/Adam/amigoAdam.png'
+image pensativoAdam  = 'images/Sprites/Adam/pensativoAdam.png'
+image observadorAdam = 'images/Sprites/Adam/observadorAdam.png'
+
+# image idleBrayan = 'images/Sprites//.png'
+# image idleBrayan = 'images/Sprites//.png'
+# image idleBrayan = 'images/Sprites//.png'
+# image idleBrayan = 'images/Sprites//.png'
+# image idleBrayan = 'images/Sprites//.png'
+
+# image idleGavya = 'images/Sprites//.png'
+# image idleGavya = 'images/Sprites//.png'
+# image idleGavya = 'images/Sprites//.png'
+# image idleGavya = 'images/Sprites//.png'
+# image idleGavya = 'images/Sprites//.png'
+
+# image idleMelissa = 'images/Sprites//.png'
+# image idleMelissa = 'images/Sprites//.png'
+# image idleMelissa = 'images/Sprites//.png'
+# image idleMelissa = 'images/Sprites//.png'
+# image idleMelissa = 'images/Sprites//.png'
+
+# image idleErin = 'images/Sprites//.png'
+# image idleErin = 'images/Sprites//.png'
+# image idleErin = 'images/Sprites//.png'
+# image idleErin = 'images/Sprites//.png'
+# image idleErin = 'images/Sprites//.png'
 
 # Variables
 define puntos          = 0 # Parámetros para avanzar al siguiente capítulo, van de 0 a 100 y definen las monedas de cada capítulo.

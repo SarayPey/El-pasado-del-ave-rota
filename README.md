@@ -19,3 +19,4 @@ Eres un agente de la policía de Senlín; junto con otros agentes, planifican un
 - (PRÓXIMAMENTE) Sistema de tienda y galería.
 
 Este juego es para mayores de 15 años, debido a que contiene temas relacionados con el bullying, el acoso, el suicidio y la salud mental. Contiene imágenes brillantes y parpadeantes.
+
