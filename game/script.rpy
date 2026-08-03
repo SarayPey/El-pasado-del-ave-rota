@@ -402,13 +402,15 @@ label cap0:
                 $ adamFeli += 2
                 adam '{cps=45}Gracias, [prota].{/cps}'
                 adam '{cps=45}Espero que te guste.{/cps}'
+                hide felizAdam
+                show amigoAdam
                 adam '{cps=45}Aunque es para después de la reunión, así que tienes que tener paciencia.{/cps}'
         brayan '{cps=45}Disculpa la demora, Adam.{/cps}'
         '{cps=45}Ante ustedes, ves a {b}Brayan Orellana{/b}, agente especializado en misiones encubiertas del sector 970.{/cps}'
         brayan '{cps=45}¿Te acaba de ayudar el nuevo?{/cps}'
         adam '{cps=45}Yo lo veo aquí, ¿tú no?{/cps}'
         brayan '{cps=45}No me hables así, {i}\'Pichón\'{/i}, recuerda que soy mayor que tú.{/cps}'
-        adam '{cps=45}Y yo soy el líder del 970.{/cps}'
+        adam '{cps=45}Recuerda que soy el líder del 970.{/cps}'
         brayan '{cps=45}…Buen punto, Carter.{/cps}'
         adam '{cps=45}Pero sí, [prota] me ayudó a ordenar.{/cps}'
         brayan '{cps=45}Eso es genial.{/cps}'
@@ -503,6 +505,8 @@ label cap0:
         melissa '{cps=45}Meraki, déjalo. El detective no sabe.{/cps}'
         adam '{cps=45}Además, el Teniente suele llegar a la hora exacta, y eso lo sabes.{/cps}'
         '{cps=45}El reloj suena, ya van a ser las 9AM.{/cps}'
+        stop music
+        play music '008.Reunion.mp3'
         '{cps=45}Entonces escuchan pasos.{/cps}'
         adam '{cps=45}{i}{b}*Murmurando*{/b} Les dije que vendría justo a tiempo.{/i}{/cps}'
         erin '{cps=45}Buenos días, agentes.{/cps}'

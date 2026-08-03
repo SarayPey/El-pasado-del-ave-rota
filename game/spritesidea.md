@@ -1,14 +1,16 @@
 (Por presencia)
 
 ### Adam pequeño (cap 2-final)
-- [ ] Normal/idle
-- [ ] Pose/emoción
-- [ ] Pose/emoción
-- [ ] Pose/emoción
-- [ ] Pose/emoción
+- [x] Normal/idle
+- [x] Feliz
+- [x] Amigo
+- [x] Pensativo
+- [x] Observador
+- [ ] Triste
 
 ### Brayan pequeño (cap 2-final)
 - [ ] Normal/idle
+- [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
@@ -20,9 +22,11 @@
 - [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
+- [ ] Pose/emoción
 
 ### Adam normal (cap 0, 1, 3, epilogo bueno)
 - [ ] Normal/idle
+- [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
@@ -34,9 +38,11 @@
 - [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
+- [ ] Pose/emoción
 
 ### Gavya normal (cap 0, 1, 3, epilogo bueno)
 - [ ] Normal/idle
+- [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
@@ -48,9 +54,11 @@
 - [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
+- [ ] Pose/emoción
 
 ### Erin (cap 0, 1, 3, epilogo bueno)
 - [ ] Normal/idle
+- [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
@@ -62,9 +70,11 @@
 - [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
+- [ ] Pose/emoción
 
 ### Lydia (cap 1, 3)
 - [ ] Normal/idle
+- [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
 - [ ] Pose/emoción
