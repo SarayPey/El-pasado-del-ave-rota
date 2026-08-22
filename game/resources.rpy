@@ -1,15 +1,15 @@
 ## Personajes
 # Presente
-define adam    = Character("Adam Carter", color = "#f07b32")
-define brayan  = Character("Brayan Orellana", color = "#3bc137")
-define gavya   = Character("Gavya Meraki", color = "#8f9fff")
-define melissa = Character("Melissa Torres", color = "#690591")
-define erin    = Character("Teniente Erin Miller")
+define adam    = Character('Adam Carter', color = '#f07b32')
+define brayan  = Character('Brayan Orellana', color = '#3bc137')
+define gavya   = Character('Gavya Meraki', color = '#8f9fff')
+define melissa = Character('Melissa Torres', color = '#690591')
+define erin    = Character('Teniente Erin Miller', color = '#77451c')
 
 # Pasado
-define adamP   = Character("Adam Miller", color = "#f38508") # tiene 9 años
-define brayanP = Character("Brayan Orellana", color = "#218a17") # tiene 14 años
-define gavyaP  = Character("Gavya Meraki", color = "#2fafcf") # tiene 12 años
+define adamP   = Character('Adam Miller', color = '#f38508') # tiene 9 años
+define brayanP = Character('Brayan Orellana', color = '#218a17') # tiene 14 años
+define gavyaP  = Character('Gavya Meraki', color = '#2fafcf') # tiene 12 años
 
 ## Imágenes
 # Fondos
@@ -27,40 +27,40 @@ image room_glitched5 = 'images/BG/CuartoDeProta_G5.png'
 
 # Personajes/sprites
 
-image idleAdam       = 'images/Sprites/Adam/idleAdam.png'
-image felizAdam      = 'images/Sprites/Adam/felizAdam.png'
-image amigoAdam      = 'images/Sprites/Adam/amigoAdam.png'
-image pensativoAdam  = 'images/Sprites/Adam/pensativoAdam.png'
-image observadorAdam = 'images/Sprites/Adam/observadorAdam.png'
-# image tristeAdam     = 'images/Sprites/Adam/tristeAdam.png'
+image idleAdam           = 'images/Sprites/Adam/idleAdam.png'
+image felizAdam          = 'images/Sprites/Adam/felizAdam.png'
+image amigoAdam          = 'images/Sprites/Adam/amigoAdam.png'
+image pensativoAdam      = 'images/Sprites/Adam/pensativoAdam.png'
+image observadorAdam     = 'images/Sprites/Adam/observadorAdam.png'
+image tristeAdam         = 'images/Sprites/Adam/tristeAdam.png'
 
-# image idleBrayan = 'images/Sprites/Brayan/.png'
-# image idleBrayan = 'images/Sprites/Brayan/.png'
-# image idleBrayan = 'images/Sprites/Brayan/.png'
-# image idleBrayan = 'images/Sprites/Brayan/.png'
-# image idleBrayan = 'images/Sprites/Brayan/.png'
-# image idleBrayan = 'images/Sprites/Brayan/.png'
+image idleBrayan         = 'images/Sprites/Brayan/idleBrayan.png'
+image felizBrayan        = 'images/Sprites/Brayan/felizBrayan.png'
+image curiosoBrayan      = 'images/Sprites/Brayan/curiosoBrayan.png'
+image aburridoBrayan     = 'images/Sprites/Brayan/aburridoBrayan.png'
+image molestoBrayan      = 'images/Sprites/Brayan/molestoBrayan.png'
+image planesBrayan       = 'images/Sprites/Brayan/planesBrayan.png'
 
-# image idleGavya = 'images/Sprites/Gavya/.png'
-# image idleGavya = 'images/Sprites/Gavya/.png'
-# image idleGavya = 'images/Sprites/Gavya/.png'
-# image idleGavya = 'images/Sprites/Gavya/.png'
-# image idleGavya = 'images/Sprites/Gavya/.png'
-# image idleGavya = 'images/Sprites/Gavya/.png'
+image idleGavya          = 'images/Sprites/Gavya/idleGavya.png'
+image felizGavya         = 'images/Sprites/Gavya/idleGavya.png'
+image analistaGavya      = 'images/Sprites/Gavya/analistaGavya.png'
+image negociadoraGavya   = 'images/Sprites/Gavya/negociadoraGavya.png'
+image pensativaGavya     = 'images/Sprites/Gavya/pensativaGavya.png'
+image seriaGavya         = 'images/Sprites/Gavya/seriaGavya.png'
 
-# image idleMelissa = 'images/Sprites/Melissa/.png'
-# image idleMelissa = 'images/Sprites/Melissa/.png'
-# image idleMelissa = 'images/Sprites/Melissa/.png'
-# image idleMelissa = 'images/Sprites/Melissa/.png'
-# image idleMelissa = 'images/Sprites/Melissa/.png'
-# image idleMelissa = 'images/Sprites/Melissa/.png'
+image idleMelissa        = 'images/Sprites/Melissa/idleMelissa.png'
+image analistaMelissa    = 'images/Sprites/Melissa/analistaMelissa.png'
+image estresadaMelissa   = 'images/Sprites/Melissa/estresadaMelissa.png'
+image felizMelissa       = 'images/Sprites/Melissa/ifelizMelissa.png'
+image molestaMelissa     = 'images/Sprites/Melissa/molestaMelissa.png'
+image observadoraMelissa = 'images/Sprites/Melissa/observadoraMelissa.png'
 
-# image idleErin = 'images/Sprites/Erin/.png'
-# image idleErin = 'images/Sprites/Erin/.png'
-# image idleErin = 'images/Sprites/Erin/.png'
-# image idleErin = 'images/Sprites/Erin/.png'
-# image idleErin = 'images/Sprites/Erin/.png'
-# image idleErin = 'images/Sprites/Erin/.png'
+image idleErin           = 'images/Sprites/Erin/idleErin.png'
+image felizErin          = 'images/Sprites/Erin/felizErin.png'
+image analistaErin       = 'images/Sprites/Erin/analistaErin.png'
+image pensativoErin      = 'images/Sprites/Erin/pensativoErin.png'
+image serioErin          = 'images/Sprites/Erin/serioErin.png'
+image sonrisaErin        = 'images/Sprites/Erin/sonrisaErin.png'
 
 # image idleErin = 'images/Sprites/OC/.png'
 
@@ -87,7 +87,7 @@ define reputacionP     = 0     # Parámetro de reputación en la academia de cri
 #         self.descripcion = descripcion
 #         self.posee = posee
 
-# define chocolate = producto("Chocolate", "chocolate", 200, "Una barra de chocolate dulce y deliciosa", 0)
+# define chocolate = producto('Chocolate', 'chocolate', 200, 'Una barra de chocolate dulce y deliciosa', 0)
 
 # Inventario
 define panConJamon = 0

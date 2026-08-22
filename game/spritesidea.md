@@ -6,7 +6,7 @@
 - [x] Amigo
 - [x] Pensativo
 - [x] Observador
-- [ ] Triste
+- [x] Triste
 
 ### Brayan pequeño (cap 2-final)
 - [ ] Normal/idle

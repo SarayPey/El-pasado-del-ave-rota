@@ -30,4 +30,4 @@ Este juego es para mayores de 15 años, debido a que contiene temas relacionados
 ## Secundarios
 
 1. Melissa Torres
-2. Erin Miller
+2. Erin Miller 
