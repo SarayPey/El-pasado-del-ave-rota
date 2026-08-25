@@ -248,7 +248,10 @@ label cap0:
                         adam '{cps=45}Aunque es para después de la reunión, así que tienes que tener paciencia.{/cps}'
                         hide felizAdam
                         show idleAdam at right
+                        show curiosoBrayan at left with moveinleft
                         brayan '{cps=45}Disculpa la demora, Adam.{/cps}'
+                        hide curiosoBrayan
+                        show idleBrayan at left
                         '{cps=45}Ante ustedes, ves a {b}Brayan Orellana{/b}, agente especializado en misiones encubiertas del sector 970.{/cps}'
                         brayan '{cps=45}¿Te acaba de ayudar el nuevo?{/cps}'
                         hide idleAdam
@@ -256,8 +259,14 @@ label cap0:
                         adam '{cps=45}En realidad, [prota] acaba de llegar{/cps}'
                         hide amigoAdam
                         show idleAdam at right
+                        hide curiosoBrayan
+                        show aburridoBrayan at left
                         brayan '{cps=45}Ah.{/cps}'
+                        hide aburridoBrayan
+                        show curiosoBrayan at left
                         brayan '{cps=45}Eso es genial, supongo.{/cps}'
+                        hide curiosoBrayan
+                        show planesBrayan at left
                         brayan '{cps=45}Entonces… [saviTortu], ¿no?{/cps}'
                         menu:
                             'Sí, soy yo.':
@@ -405,9 +414,14 @@ label cap0:
                 hide felizAdam
                 show amigoAdam
                 adam '{cps=45}Aunque es para después de la reunión, así que tienes que tener paciencia.{/cps}'
+        show curiosoBrayan at left with moveinleft
         brayan '{cps=45}Disculpa la demora, Adam.{/cps}'
+        hide curiosoBrayan
+        show idleBrayan at left
         '{cps=45}Ante ustedes, ves a {b}Brayan Orellana{/b}, agente especializado en misiones encubiertas del sector 970.{/cps}'
         brayan '{cps=45}¿Te acaba de ayudar el nuevo?{/cps}'
+        hide amigoAdam
+        show pensativoAdam at right
         adam '{cps=45}Yo lo veo aquí, ¿tú no?{/cps}'
         brayan '{cps=45}No me hables así, {i}\'Pichón\'{/i}, recuerda que soy mayor que tú.{/cps}'
         adam '{cps=45}Recuerda que soy el líder del 970.{/cps}'
