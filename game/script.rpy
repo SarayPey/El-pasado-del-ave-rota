@@ -1,5 +1,6 @@
 ﻿# Protagonista
-define saviTortu = Character('[prota] [apellido]') # La variable del protagonista es saviTortu porque es una mezcla de las palabras en inglés '{cps=45}Savior' y '{cps=45}Torture', que son dos opciones {/cps}s plausibles para el jugador en el juego
+define saviTortu = Character('[prota] [apellido]')
+# La variable del protagonista es saviTortu porque es una mezcla de las palabras en inglés '{cps=45}Savior' y '{cps=45}Torture', que son dos opciones {/cps}s plausibles para el jugador en el juego
 
 label start:
     scene black
@@ -10,7 +11,7 @@ label start:
     $ apellido = apellido.strip()
     $ edad = ''
     while edad < '20' or not edad:
-        $ edad = renpy.input('Ingresa tu edad en el juego (debe ser a partir de los 20 años)', length = 3)
+        $ edad = renpy.input('Ingresa tu edad en el juego (debe ser a partir de los 20 años)')
         $ edad = edad.strip()
 
     if not prota and not apellido and not edad:

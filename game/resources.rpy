@@ -51,7 +51,7 @@ image seriaGavya         = 'images/Sprites/Gavya/seriaGavya.png'
 image idleMelissa        = 'images/Sprites/Melissa/idleMelissa.png'
 image analistaMelissa    = 'images/Sprites/Melissa/analistaMelissa.png'
 image estresadaMelissa   = 'images/Sprites/Melissa/estresadaMelissa.png'
-image felizMelissa       = 'images/Sprites/Melissa/ifelizMelissa.png'
+image felizMelissa       = 'images/Sprites/Melissa/felizMelissa.png'
 image molestaMelissa     = 'images/Sprites/Melissa/molestaMelissa.png'
 image observadoraMelissa = 'images/Sprites/Melissa/observadoraMelissa.png'
 
