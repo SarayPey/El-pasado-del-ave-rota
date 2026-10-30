@@ -445,7 +445,11 @@ label cap0:
         brayan '{cps=45}¿Te acaba de ayudar el nuevo?{/cps}'
         hide idleAdam
         show pensativoAdam at right
+        hide curiosoBrayan
+        show idleBrayan
         adam '{cps=45}Yo lo veo aquí, ¿tú no?{/cps}'
+        hide curiosoBrayan
+        sho
         brayan '{cps=45}No me hables así, {i}\'Pichón\'{/i}, recuerda que soy mayor que tú.{/cps}'
         adam '{cps=45}Recuerda que soy el líder del 970.{/cps}'
         brayan '{cps=45}…Buen punto, Carter.{/cps}'
